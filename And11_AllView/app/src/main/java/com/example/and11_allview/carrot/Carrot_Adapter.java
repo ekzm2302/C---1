@@ -51,11 +51,13 @@ public class Carrot_Adapter extends RecyclerView.Adapter<Carrot_Adapter.ViewHold
         h.tv_like.setText(list.get(i).getTv_like());
         h.tv_when.setText(list.get(i).getTv_when());
 
+        int index=i;
         h.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+               
                 Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("dto",list.get(index));
                 context.startActivity(intent);
             }
         });
