@@ -35,11 +35,10 @@ public class CarrotFragment extends Fragment {
         list = new ArrayList<>();
 
         list.add(new CarrotDTO(R.drawable.product1,"지역","길거리에서 주워온 물건입니다","50,000원","1","1", "방금 전"));
-        list.add(new CarrotDTO(R.drawable.product2,"지역","길거리에서 주워온 물건입니다","50,000원","1","1", "방금 전"));
-        list.add(new CarrotDTO(R.drawable.product3,"지역","길거리에서 주워온 물건입니다","50,000원","1","1", "방금 전"));
+        list.add(new CarrotDTO(R.drawable.product2,"지역","훔쳐온 물건입니다","50,000원","1","1", "방금 전"));
+        list.add(new CarrotDTO(R.drawable.product3,"지역","친구 물건입니다","50,000원","1","1", "방금 전"));
         list.add(new CarrotDTO(R.drawable.product4,"지역","길거리에서 주워온 물건입니다","50,000원","1","1", "방금 전"));
         list.add(new CarrotDTO(R.drawable.product5,"지역","길거리에서 주워온 물건입니다","50,000원","1","1", "방금 전"));
-        Log.d("TAG", "onCreateView: "+list.get(0).getTv_product());
         list_carrot = v.findViewById(R.id.list_carrot);
 
 

@@ -1,6 +1,8 @@
 package com.example.and11_allview.carrot;
 
-public class CarrotDTO {
+import java.io.Serializable;
+
+public class CarrotDTO implements Serializable {
     int imgv_product;
     String tv_where;
     String tv_product;
