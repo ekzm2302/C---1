@@ -1,14 +1,17 @@
 package com.example.and11_allview.carrot;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.and11_allview.MainActivity;
 import com.example.and11_allview.R;
 
 import java.util.ArrayList;
@@ -42,21 +45,41 @@ public class Carrot_Adapter extends RecyclerView.Adapter<Carrot_Adapter.ViewHold
         h.tv_chat.setText(list.get(i).getTv_chat());
         h.tv_like.setText(list.get(i).getTv_like());
         h.tv_when.setText(list.get(i).getTv_when());
+
+        h.item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+
+            }
+
+        });
     }
 
     @Override
     public int getItemCount() {
         return list.size();
+        }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_product, tv_where, tv_price, tv_chat, tv_like, tv_when;
         ImageView imgv_product;
+        LinearLayout item;
 
         public ViewHolder(@NonNull View v) {
             super(v);
-
+            item = v.findViewById(R.id.item);
             tv_where = v.findViewById(R.id.tv_where);
             tv_product = v.findViewById(R.id.tv_product);
             tv_price = v.findViewById(R.id.tv_price);
@@ -64,8 +87,6 @@ public class Carrot_Adapter extends RecyclerView.Adapter<Carrot_Adapter.ViewHold
             tv_like = v.findViewById(R.id.tv_like);
             tv_when = v.findViewById(R.id.tv_when);
             imgv_product = v.findViewById(R.id.imgv_product);
-
-
 
         }
     }
