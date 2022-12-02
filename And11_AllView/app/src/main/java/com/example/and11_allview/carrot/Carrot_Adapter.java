@@ -1,5 +1,6 @@
 package com.example.and11_allview.carrot;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.and11_allview.MainActivity;
 import com.example.and11_allview.R;
 
 import java.util.ArrayList;
@@ -21,9 +21,13 @@ public class Carrot_Adapter extends RecyclerView.Adapter<Carrot_Adapter.ViewHold
 
     LayoutInflater inflater;
     ArrayList<CarrotDTO> list;
-    public Carrot_Adapter (LayoutInflater inflater, ArrayList<CarrotDTO> list) {
+    Context context;
+
+
+    public Carrot_Adapter(LayoutInflater inflater, ArrayList<CarrotDTO> list, Context context) {
         this.inflater = inflater;
         this.list =list;
+        this.context = context;
     }
 
 
@@ -38,6 +42,7 @@ public class Carrot_Adapter extends RecyclerView.Adapter<Carrot_Adapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder h, int i) {
+
         h.tv_where.setText(list.get(i).getTv_where());
         h.tv_product.setText(list.get(i).getTv_product());
         h.imgv_product.setImageResource(list.get(i).getImgv_product());
@@ -49,10 +54,10 @@ public class Carrot_Adapter extends RecyclerView.Adapter<Carrot_Adapter.ViewHold
         h.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
 
+                Intent intent = new Intent(context, DetailActivity.class);
+                context.startActivity(intent);
             }
-
         });
     }
 

@@ -5,7 +5,7 @@
     android:orientation="horizontal"
     android:id="@+id/item">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imgv_product"
         android:padding="5dp"
         android:src="@drawable/ic_launcher_background"

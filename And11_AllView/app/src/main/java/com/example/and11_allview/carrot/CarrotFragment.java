@@ -1,5 +1,6 @@
 package com.example.and11_allview.carrot;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,9 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.example.and11_allview.MainActivity;
 import com.example.and11_allview.R;
 
 import java.util.ArrayList;
@@ -38,20 +41,13 @@ public class CarrotFragment extends Fragment {
         list.add(new CarrotDTO(R.drawable.product5,"지역","길거리에서 주워온 물건입니다","50,000원","1","1", "방금 전"));
         Log.d("TAG", "onCreateView: "+list.get(0).getTv_product());
         list_carrot = v.findViewById(R.id.list_carrot);
-       Carrot_Adapter adapter = new Carrot_Adapter(inflater, list);
+
+
+       Carrot_Adapter adapter = new Carrot_Adapter(inflater, list,getContext());
        list_carrot.setAdapter(adapter);
 
         RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         list_carrot.setLayoutManager(manager);
-
-
-
-        item.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         return v;
 
 
