@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".carrot.CarrotFragment">
+    android:layout_height="wrap_content"
+    tools:context=".carrot.CarrotFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+        <TextView
+            android:textColor="#E65E33"
+            android:textStyle="bold"
+            android:id="@+id/ima2"
+            android:padding="20dp"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="당근 마켓"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    <View
+        android:background="#111"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="1dp"/>
 
-</FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_carrot"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+
+
+</LinearLayout>
